@@ -4,6 +4,7 @@ streamlit_option_menu
 streamlit_chat
 africastalking
 openai
+setuptools
 requests
 google-generativeai
 langchain
