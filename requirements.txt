@@ -14,7 +14,6 @@ google-generativeai
 bcrypt
 captcha
 python-dotenv
-pyttsx3
 st-social-media-links
 tqdm
 streamlit-tags
