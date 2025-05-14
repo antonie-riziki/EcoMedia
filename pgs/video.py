@@ -16,7 +16,7 @@ sys.path.insert(1, './modules')
 print(sys.path.insert(1, '../modules/'))
 
 from youtube_transcription import get_transcript, extract_youtube_code
-from upload_file_rag import text_to_speech
+# from upload_file_rag import text_to_speech
 from func import news_summary, news_category, news_NER, user_q_and_a, news_translation, news_sentiment, news_impact, news_hashtags, news_agenda_detection, news_highlight_key_quotes, news_local_language_translation, news_ama_chat
 
 from dotenv import load_dotenv
