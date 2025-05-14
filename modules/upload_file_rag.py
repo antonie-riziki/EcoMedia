@@ -3,7 +3,7 @@ import sys
 import glob
 import getpass
 import warnings
-import pyttsx3
+# import pyttsx3
 import tempfile
 import streamlit as st 
 
@@ -34,15 +34,15 @@ if not GEMINI_API_KEY:
 
 
 # Initialize the pyttsx3 engine
-engine = pyttsx3.init()
+# engine = pyttsx3.init()
 
-# Function to save the spoken text to a temporary audio file
-def text_to_speech(text):
-    with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as tmp_file:
-        tmp_filename = tmp_file.name
-    engine.save_to_file(text, tmp_filename)
-    engine.runAndWait()
-    return tmp_filename
+# # Function to save the spoken text to a temporary audio file
+# def text_to_speech(text):
+#     with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as tmp_file:
+#         tmp_filename = tmp_file.name
+#     engine.save_to_file(text, tmp_filename)
+#     engine.runAndWait()
+#     return tmp_filename
 
 
 def load_model():
@@ -155,12 +155,12 @@ def query_system(query: str, qa_chain):
     if not result["result"] or "don't know" in result["result"].lower():
       return "The answer could not be found in the provided documents"
 
-    audio_filename = text_to_speech(result['result'])
+    # audio_filename = text_to_speech(result['result'])
     
-    # Play the audio file
-    audio_file = open(audio_filename, 'rb')
-    audio_bytes = audio_file.read()
-    st.audio(audio_bytes, format='audio/mp3')
+    # # Play the audio file
+    # audio_file = open(audio_filename, 'rb')
+    # audio_bytes = audio_file.read()
+    # st.audio(audio_bytes, format='audio/mp3')
       
 
     return f"MediaBot 📰: {result['result']}" #\nSources: {[s.metadata['source'] for s in result['source_documents']]}"
